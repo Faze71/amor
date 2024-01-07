@@ -12,8 +12,19 @@ function mostrarBroma() {
   var x = document.getElementById("btnInicial");
   var y = document.getElementById("btnBroma");
   
-  // Ocultar el botón inicial y mostrar el botón broma
+  // Ocultar el botón inicial
   x.style.display = "none";
+
+  // Obtener la posición aleatoria
+  var posX = Math.floor(Math.random() * window.innerWidth);
+  var posY = Math.floor(Math.random() * window.innerHeight);
+
+  // Cambiar la posición del botón broma
+  y.style.position = "absolute";
+  y.style.left = posX + "px";
+  y.style.top = posY + "px";
+
+  // Mostrar el botón broma
   y.style.display = "inline";
 }
 
@@ -43,8 +54,8 @@ function mostrarTexto() {
     // Borrar el botón broma
     y.remove();
 
+    // Mostrar el texto y la imagen
     x.style.display = "block";
-
   } else {
     estado = "normal";
     
